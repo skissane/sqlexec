@@ -1,0 +1,16 @@
+SRC=sqlexec.c
+OBJ=$(SRC:%.c=%.o)
+LIB=sqlexec.dylib
+CC=gcc
+CFLAGS=-g -fPIC
+LDFLAGS=-dynamiclib
+
+all: $(LIB)
+
+$(LIB): $(OBJ)
+	$(CC) $(LDFLAGS) -o $(LIB) $(OBJ)
+
+.PHONY:	all clean
+
+clean:
+	rm -rf $(OBJ) $(LIB)

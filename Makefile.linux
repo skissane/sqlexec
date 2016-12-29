@@ -1,0 +1,16 @@
+SRC=sqlexec.c
+OBJ=$(SRC:%.c=%.o)
+LIB=sqlexec.so
+CC=gcc
+CFLAGS=-g -fPIC
+LDFLAGS=-shared
+
+all: $(LIB)
+
+$(LIB): $(OBJ)
+	$(CC) $(LDFLAGS) -o $(LIB) $(OBJ)
+
+.PHONY:	all clean
+
+clean:
+	rm -rf $(OBJ) $(LIB)
