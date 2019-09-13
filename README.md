@@ -1,3 +1,9 @@
+**Note**: Starting with SQLite 3.16.0 (released 2017-01-02), SQLite
+includes pragma table-valued functions, which provides all this
+extension could do and more. So, there is no longer any reason to use
+this extension, and I will do no further work on it. You might find
+it useful as example code.
+
 SQLEXEC is a sqlite3 extension which allows you to define virtual tables
 in terms of SQL. Why do you want to do this? Well, you can't use PRAGMA
 in queries, views, etc. Suppose you want to define a view which includes
